@@ -14,7 +14,7 @@ class ElemLocators:
     xpath_product = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/div"
     xpath_lockeduser = '/html/body/div[2]/div[1]/div/div/form/h3'
     xpath_invalid_login = "/html/body/div[2]/div[1]/div/div/form/h3"
-    xpath_menu = '//button[@id="react-burger-menu-btn"]'
+    xpath_menu = "/html/body/div/div[1]/div/div[3]/div"
     xpath_logout = '//a[@id="logout_sidebar_link"]'
     xpath_backpack = '/html/body/div/div[2]/div[2]/div/div[2]/div/div[1]/div[3]/button'
     xpath_jacket = '/html/body/div/div[2]/div[2]/div/div[2]/div/div[4]/div[3]/button'
@@ -30,3 +30,11 @@ class ElemLocators:
     xpath_zipcode = '//input[@id="postal-code"]'
     xpath_continue = '//input[@id="continue"]'
     xpath_total = '//div[@id="checkout_summary_container"]/div/div[2]/div[8]'
+    xpath_productsort = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select"
+    xpath_az = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[1]"
+    xpath_za = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[2]"
+    xpath_lohi = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[3]"
+    xpath_hilo = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[4]"
+    
+
+
