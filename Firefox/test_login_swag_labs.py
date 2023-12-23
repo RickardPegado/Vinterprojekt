@@ -1,15 +1,7 @@
-from requests.auth import HTTPBasicAuth
-from decouple import config
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
-from selenium.webdriver import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from Firefox.login_data import LoginData
-from Firefox.login_data import ElemLocators
-from time import sleep as wait
-import time
+from login_data import LoginData
+from login_data import ElemLocators
 import pytest
 
 
