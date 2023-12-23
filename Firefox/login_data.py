@@ -7,6 +7,15 @@ class LoginData:
     wrong_password = "pass123"
 
 
+class CartData:
+    firstname = "Rickard"
+    lastname = "Pegado"
+    zipcode = "61238"
+    product_rate1 = 29.99
+    product_rate2 = 9.99
+    tax1 = 3.20
+
+
 class ElemLocators:
     xpath_username = '//input[@id="user-name"]'
     xpath_password = '//input[@id="password"]'
@@ -31,12 +40,14 @@ class ElemLocators:
     xpath_cart5 = '//*[@id="cart_contents_container"]/div/div[1]/div[7]/div[2]/div[2]/button'
     xpath_cart6 = '//*[@id="cart_contents_container"]/div/div[1]/div[8]/div[2]/div[2]/button'
     xpath_continueshopping = '/html/body/div/div[2]/div[3]/div/div[2]/a[1]'
-    xpath_checkout = '//button[@id="checkout"]'
+    xpath_checkout = '/html/body/div/div[2]/div[3]/div/div[2]/a[2]'
     xpath_firstname = '//input[@id="first-name"]'
     xpath_lastname = '//input[@id="last-name"]'
     xpath_zipcode = '//input[@id="postal-code"]'
-    xpath_continue = '//input[@id="continue"]'
-    xpath_total = '//div[@id="checkout_summary_container"]/div/div[2]/div[8]'
+    xpath_continue = '//*[@id="checkout_info_container"]/div/form/div[2]/input'
+    xpath_total = '//div[@id="checkout_summary_container"]/div/div[2]/div[7]'
+    xpath_finish = '/html/body/div/div[2]/div[3]/div/div[2]/div[8]/a[2]'
+    xpath_confirm = '/html/body/div/div[2]/div[3]/h2'
     xpath_productsort = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select"
     xpath_az = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[1]"
     xpath_za = "/html/body/div/div[2]/div[2]/div/div[1]/div[3]/select/option[2]"
