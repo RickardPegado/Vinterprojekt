@@ -27,7 +27,7 @@ class TestUrl:
         yield
         self.driver.close()
 
-    def test_addtocart_standard_user(self, launch_driver):
+    def test_add_to_cart_standard_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user1)
@@ -56,7 +56,7 @@ class TestUrl:
         print("SUCCESS # PRODUCT ADDED SUCCESSFULLY")
 
     
-    def test_addtocart_problem_user(self, launch_driver):
+    def test_add_to_cart_problem_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user3)
@@ -96,7 +96,7 @@ class TestUrl:
         check.equal(item_count, '6')
 
 
-    def test_addtocart_glitch_user(self, launch_driver):
+    def test_add_to_cart_glitch_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user4)

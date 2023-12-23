@@ -27,7 +27,7 @@ class TestUrl:
         yield
         self.driver.close()
 
-    def test_remove_from_cart_standard_user(self, launch_driver):
+    def test_empty_cart_standard_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user1)
@@ -37,6 +37,15 @@ class TestUrl:
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_login).click()
         product = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_product).text
         assert product == 'Products'
+        
+        try:
+            absent_element = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge)
+        except NoSuchElementException:
+        
+            assert True
+        else:
+        
+            assert False            
 
         for x in range(6):
 
@@ -45,15 +54,8 @@ class TestUrl:
         item_count = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge).text
         assert item_count == str(len(items_list))
 
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart).click()
-
-        for index, item_xpath in enumerate(cart_button_list):
-            try:
-                self.driver.find_element(by=By.XPATH, value=item_xpath).click()
-            except NoSuchElementException:
-                print("Less Items in Cart then Expected")
-
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_continueshopping).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_menu).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_reset).click()
 
         try:
             absent_element = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge)
@@ -66,9 +68,10 @@ class TestUrl:
 
         assert product == 'Products'
         assert self.driver.current_url == "https://www.saucedemo.com/v1/inventory.html"
+    
 
-
-    def test_remove_from_cart_problem_user(self, launch_driver):
+    
+    def test_empty_cart_problem_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user3)
@@ -78,19 +81,13 @@ class TestUrl:
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_login).click()
         product = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_product).text
         assert product == 'Products'
-
+        
         for index, item_xpath in enumerate(items_list):
             self.driver.find_element(by=By.XPATH, value=item_xpath).click()
 
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart).click()
 
-        for index, item_xpath in enumerate(cart_button_list):
-            try:
-                self.driver.find_element(by=By.XPATH, value=item_xpath).click()
-            except NoSuchElementException:
-                print("Less Items in Cart then Expected")
-
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_continueshopping).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_menu).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_reset).click()
 
         try:
             absent_element = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge)
@@ -105,7 +102,7 @@ class TestUrl:
         assert self.driver.current_url == "https://www.saucedemo.com/v1/inventory.html"
 
 
-    def test_remove_from_cart_glitch_user(self, launch_driver):
+    def test_empty_cart_glitch_user(self, launch_driver):
         self.driver.get(self.url)
         assert self.driver.current_url == "https://www.saucedemo.com/v1/index.html"
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_username).send_keys(LoginData.user4)
@@ -115,6 +112,15 @@ class TestUrl:
         self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_login).click()
         product = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_product).text
         assert product == 'Products'
+        
+        try:
+            absent_element = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge)
+        except NoSuchElementException:
+        
+            assert True
+        else:
+        
+            assert False            
 
         for x in range(6):
 
@@ -123,15 +129,8 @@ class TestUrl:
         item_count = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge).text
         assert item_count == str(len(items_list))
 
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart).click()
-
-        for index, item_xpath in enumerate(cart_button_list):
-            try:
-                self.driver.find_element(by=By.XPATH, value=item_xpath).click()
-            except NoSuchElementException:
-                print("Less Items in Cart then Expected")
-
-        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_continueshopping).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_menu).click()
+        self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_reset).click()
 
         try:
             absent_element = self.driver.find_element(by=By.XPATH, value=ElemLocators.xpath_cart_badge)

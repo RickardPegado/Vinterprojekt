@@ -25,6 +25,7 @@ class ElemLocators:
     xpath_invalid_login = "/html/body/div[2]/div[1]/div/div/form/h3"
     xpath_menu = "/html/body/div/div[1]/div/div[3]/div"
     xpath_logout = '//a[@id="logout_sidebar_link"]'
+    xpath_reset = '//*[@id="reset_sidebar_link"]'
     xpath_backpack = '//*[@id="inventory_container"]/div/div[1]/div[3]/button'
     xpath_jacket = '//*[@id="inventory_container"]/div/div[4]/div[3]/button'
     xpath_boltshirt = '//*[@id="inventory_container"]/div/div[3]/div[3]/button'
