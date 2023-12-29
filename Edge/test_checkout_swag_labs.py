@@ -12,7 +12,9 @@ class TestUrl:
 
     @pytest.fixture
     def launch_driver(self):
-        self.driver = webdriver.Edge()
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        self.driver = webdriver.Edge(options=options)
         self.driver.maximize_window()
         self.driver.implicitly_wait(8)
         yield
