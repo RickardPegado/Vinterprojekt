@@ -14,7 +14,10 @@ class TestUrl:
 
     @pytest.fixture
     def launch_driver(self):
-        self.driver = webdriver.Edge()
+        options = webdriver.ChromeOptions()
+        options.add_argument("--enable-chrome-browser-cloud-management")
+        options.add_experimental_option('detach', True)
+        self.driver = webdriver.Edge(options=options)
         self.driver.maximize_window()
         self.driver.implicitly_wait(8)
         yield
